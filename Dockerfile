@@ -1,10 +1,12 @@
 FROM ubuntu-debootstrap:14.04
-MAINTAINER Christian Lück <christian@lueck.tv>
+MAINTAINER Arnaud de Mouhy <arnaud@flyingpingu.com>
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
-  nginx supervisor php5-fpm php5-cli \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
+  nginx supervisor php5-fpm \
   php5-pgsql php5-mysql php5-sqlite \
   wget
+RUN DEBIAN_FRONTEND=noninteractive apt-get clean
 
 # add adminer as the only nginx site
 ADD adminer.nginx.conf /etc/nginx/sites-available/adminer
@@ -13,14 +15,13 @@ RUN rm /etc/nginx/sites-enabled/default
 
 # install adminer and default theme
 RUN mkdir /var/www
-RUN wget http://downloads.sourceforge.net/adminer/adminer-4.1.0.php -O /var/www/index.php
-RUN wget https://raw.github.com/vrana/adminer/master/designs/hever/adminer.css -O /var/www/adminer.css
+RUN DEBIAN_FRONTEND=noninteractive wget http://downloads.sourceforge.net/adminer/adminer-4.2.0.php -O /var/www/index.php
+RUN DEBIAN_FRONTEND=noninteractive wget https://raw.github.com/vrana/adminer/master/designs/hever/adminer.css -O /var/www/adminer.css
 WORKDIR /var/www
 RUN chown www-data:www-data -R /var/www
 
 # Increase PHP upload limit
-RUN echo "upload_max_filesize = 2000M" >> /etc/php5/cli/conf.d/upload_max_filesize.ini
-RUN echo "post_max_size = 2000M" >> /etc/php5/cli/conf.d/post_max_size.ini
+RUN sed -rs -i -e 's/upload_max_filesize = [0-9]+M/upload_max_filesize = 2000M/g' /etc/php5/*/php.ini
 
 # expose only nginx HTTP port
 EXPOSE 80
