@@ -20,7 +20,8 @@ WORKDIR /var/www
 RUN chown www-data:www-data -R /var/www
 
 # Increase PHP upload limit
-RUN sed -rs -i -e 's/upload_max_filesize = [0-9]+M/upload_max_filesize = 2000M/g' /etc/php5/*/php.ini
+RUN sed -r -i -e 's/upload_max_filesize = [0-9]+M/upload_max_filesize = 2000M/g' /etc/php5/fpm/php.ini
+RUN sed -r -i -e 's/post_max_size = [0-9]+M/post_max_size = 2000M/g' /etc/php5/fpm/php.ini
 
 # expose only nginx HTTP port
 EXPOSE 80
