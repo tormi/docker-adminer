@@ -13,7 +13,7 @@ RUN ln -s /etc/nginx/sites-available/adminer /etc/nginx/sites-enabled/adminer
 RUN rm /etc/nginx/sites-enabled/default
 
 # install adminer and default theme
-ADD adminer/adminer-4.2.0.php /var/www/index.php
+ADD adminer/adminer-4.2.1.php /var/www/index.php
 ADD adminer/adminer.css /var/www/adminer.css
 
 WORKDIR /var/www
