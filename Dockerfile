@@ -1,9 +1,9 @@
-FROM debian:stable
+FROM alpine:3.2
 MAINTAINER Arnaud de Mouhy <arnaud.demouhy@akerbis.com>
 
 ADD rootfs /
 EXPOSE 80
 
-RUN bash /build.sh
+RUN sh /build.sh
 
-CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["sh", "/run.sh"]
