@@ -7,10 +7,8 @@ apk --update add \
   php-sqlite3 \
   php-pgsql
 
-# apt-get update
-# apt-get -y install \
-#   nginx-light supervisor php5-fpm \
-#   php5-pgsql php5-mysql php5-sqlite
+# Fixing file upload rights
+chown -R nginx: /var/lib/nginx
 
 # Increase PHP upload limit
 sed -r -i -e 's/upload_max_filesize = [0-9]+M/upload_max_filesize = 2000M/g' \
