@@ -14,3 +14,5 @@ chown -R nginx: /var/lib/nginx
 sed -r -i -e 's/upload_max_filesize = [0-9]+M/upload_max_filesize = 2000M/g' \
           -e 's/post_max_size = [0-9]+M/post_max_size = 2000M/g' \
     /etc/php/php.ini
+
+find /etc/services.d -name run -exec chmod 755 {} \;
