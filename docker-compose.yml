@@ -1,0 +1,6 @@
+adminer:
+    image: 'dehy/adminer:latest'
+    ports:
+        - '80:80'
+    links:
+        - my-db-container

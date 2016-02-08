@@ -30,3 +30,7 @@ This is a rather common setup following docker's conventions:
 * `-d` will run a detached instance in the background
 * `-p {OutsidePort}:80` will bind the webserver to the given outside port
 * `dehy/adminer` the name of this docker image
+
+## Tutum
+
+[![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/?repo=https://github.com/dehy/docker-adminer)
