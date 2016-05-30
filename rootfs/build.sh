@@ -1,6 +1,9 @@
 #!/bin/sh
 
+set -eux
+
 apk --update add \
+  s6 \
   nginx \
   php-fpm \
   php-mysqli \

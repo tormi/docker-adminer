@@ -1,7 +1,10 @@
-FROM sillelien/base-alpine:0.10
+FROM alpine:latest
 MAINTAINER Arnaud de Mouhy <arnaud.demouhy@akerbis.com>
 
-ADD rootfs /
+COPY rootfs /
 EXPOSE 80
 
-RUN sh /build.sh
+RUN sh /build.sh && rm /build.sh
+
+ENTRYPOINT ["/bin/s6-svscan", "/etc/services.d"]
+CMD []
