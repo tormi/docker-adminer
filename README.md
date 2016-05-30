@@ -1,8 +1,10 @@
-# docker-adminer
+# dehy/adminer
+
+[![](https://imagelayers.io/badge/dehy/adminer:latest.svg)](https://imagelayers.io/?images=dehy/adminer:latest 'Get your own badge on imagelayers.io')
 
 [Adminer](http://www.adminer.org/en/) is a full-featured database management
 tool for the web. It is a lightweight alternative to setting up phpMyAdmin.
-This is a [docker](https://www.docker.com) image that eases setup.
+This is a very minimalist [docker](https://www.docker.com) image that eases setup.
 
 ![](http://www.adminer.org/static/designs/hever/screenshot.png)
 
@@ -10,19 +12,30 @@ See also [online demo](http://adminer.sourceforge.net/adminer.php?username=).
 
 ## Usage
 
-This docker image is available as an [automated build on the docker registry](https://registry.hub.docker.com/u/dehy/adminer/).
+This docker image is available as an [automated build on the docker registry](https://hub.docker.com/r/dehy/adminer/).
+
+The following databases are supported by this docker image:
+
+- MySQL
+- PostgreSQL
+- SQLite
+- SimpleDB
+- ElasticSearch
+- MongoDB
+
+Unsupported databases (TODO) :
+
+- MS SQL
+- Oracle
+- Firebird
 
 The recommended way to run this container looks like this:
 
 ```bash
-$ sudo docker run --link=mysql:mysql -d -p 80:80 dehy/adminer
+$ docker run --link=mysql:mysql -d -p 80:80 dehy/adminer
 ```
 
-The above example exposes the Adminer webinterface on port 80, so that you can now browse to:
-
-```
-http://localhost/
-```
+The above example exposes the Adminer webinterface on port 80, so that you can now browse to http://localhost/
 
 This is a rather common setup following docker's conventions:
 
@@ -31,6 +44,6 @@ This is a rather common setup following docker's conventions:
 * `-p {OutsidePort}:80` will bind the webserver to the given outside port
 * `dehy/adminer` the name of this docker image
 
-## Tutum
+## Docker Cloud
 
 [![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/dehy/docker-adminer)

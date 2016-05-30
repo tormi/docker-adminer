@@ -3,12 +3,36 @@
 set -eux
 
 apk --update add \
-  s6 \
-  nginx \
-  php-fpm \
-  php-mysqli \
-  php-sqlite3 \
-  php-pgsql
+    s6 \
+    nginx \
+    php-fpm \
+    php-pdo_mysql \
+    php-pdo_pgsql \
+    php-pdo_sqlite \
+    php-mssql \
+    php-xml \
+    php-json \
+    php-pear \
+    php-dev \
+    autoconf \
+    make \
+    gcc \
+    g++ \
+    openssl-dev
+
+# Patch pecl command
+sed -i -e 's/\(PHP -C\) -n/\1/g' /usr/bin/pecl
+
+pecl install mongo
+
+apk del \
+    php-pear \
+    php-dev \
+    autoconf \
+    make \
+    gcc \
+    g++ \
+    openssl-dev
 
 # Fixing file upload rights
 chown -R nginx: /var/lib/nginx

@@ -1,6 +1,46 @@
 adminer:
     image: 'dehy/adminer:latest'
+    # build: .
     ports:
         - '80:80'
-    links:
-        - my-db-container
+    # links:
+        # - mysql
+        # - postgres
+        # - sqlite
+        # - mssql
+        # - oracle
+        # - firebird
+        # - simpledb
+        # - elastic
+        # - mongodb
+
+# mysql:
+#     image: mysql:latest
+#     environment:
+#         - MYSQL_ROOT_PASSWORD=secret
+
+# postgres:
+#     image: postgres:latest
+#     environment:
+#         - POSTGRES_PASSWORD=secret
+
+## TODO
+# mssql:
+#     image: rsmoorthy/mssql:latest
+
+## TODO
+# oracle:
+#     image: wnameless/oracle-xe-11g:latest
+
+## TODO
+# firebird:
+#     image: jacobalberty/firebird
+
+# simpledb:
+#     image: aglover/simpledb-pier
+
+# elastic:
+#     image: elasticsearch:latest
+
+# mongodb:
+#     image: mongo:latest
