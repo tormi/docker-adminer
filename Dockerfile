@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:edge
 MAINTAINER Arnaud de Mouhy <arnaud.demouhy@akerbis.com>
 
 COPY rootfs /

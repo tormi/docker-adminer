@@ -1,3 +1,5 @@
 #!/bin/sh
 
-exec nginx -g "daemon off;" 2>&1 | logger
+mkdir -p /run/nginx
+
+exec nginx -g "daemon off;"
