@@ -1,6 +1,6 @@
 # dehy/adminer
 
-[![](https://imagelayers.io/badge/dehy/adminer:latest.svg)](https://imagelayers.io/?images=dehy/adminer:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/dehy/adminer.svg)](https://microbadger.com/images/dehy/adminer "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/dehy/adminer.svg)](https://microbadger.com/images/dehy/adminer "Get your own version badge on microbadger.com")
 
 [Adminer](http://www.adminer.org/en/) is a full-featured database management
 tool for the web. It is a lightweight alternative to setting up phpMyAdmin.
