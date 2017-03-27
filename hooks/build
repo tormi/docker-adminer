@@ -1,10 +1,8 @@
 #!/bin/bash
 
-set -eux
+set -ex
 
 # https://medium.com/microscaling-systems/labelling-automated-builds-on-docker-hub-f3d073fb8e1#.yldbwesu7
-
-CURDIR=$(dirname $0)
 
 if [ -z "${IMAGE_NAME}" ]; then
     echo ! "IMAGE_NAME" variable missing.
