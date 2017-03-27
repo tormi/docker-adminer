@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -eux
 
 # https://medium.com/microscaling-systems/labelling-automated-builds-on-docker-hub-f3d073fb8e1#.yldbwesu7
 
@@ -11,7 +11,7 @@ if [ -z "${IMAGE_NAME}" ]; then
 fi
 
 function evil_git_dirty {
-    [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "-dirty"
+    [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "-dirty" || echo ""
 }
 
 VCS_REF=$(git rev-parse --short HEAD)$(evil_git_dirty)
