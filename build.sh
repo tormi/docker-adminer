@@ -2,8 +2,8 @@
 
 set -eux
 
-VERSION=4.5.0
-MINOR_VERSION=4.5
+VERSION=4.6.0
+MINOR_VERSION=4.6
 MAJOR_VERSION=4
 
 docker build --no-cache -t dehy/adminer:latest .
