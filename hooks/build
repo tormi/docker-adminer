@@ -23,4 +23,6 @@ VERSION=$(grep -E "^${version_search_pattern}" rootfs/var/www/html/adminer.php |
 docker build --build-arg VCS_REF=${VCS_REF} \
              --build-arg BUILD_DATE=${BUILD_DATE} \
              --build-arg VERSION=${VERSION} \
+             --no-cache \
+             --pull \
              -t $IMAGE_NAME .

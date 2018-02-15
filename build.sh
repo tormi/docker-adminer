@@ -6,7 +6,7 @@ VERSION=4.6.1
 MINOR_VERSION=4.6
 MAJOR_VERSION=4
 
-docker build --no-cache --pull -t dehy/adminer:latest .
+IMAGE_NAME=dehy/adminer:latest hooks/build
 docker tag dehy/adminer:latest dehy/adminer:$MAJOR_VERSION
 docker tag dehy/adminer:latest dehy/adminer:$MINOR_VERSION
 docker tag dehy/adminer:latest dehy/adminer:$VERSION
