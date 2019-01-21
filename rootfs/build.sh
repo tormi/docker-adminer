@@ -18,7 +18,7 @@ apk --update add \
     make \
     gcc \
     g++ \
-    libssl1.0 \
+    libssl1.1 \
     openssl-dev
 
 # Patch pecl command
