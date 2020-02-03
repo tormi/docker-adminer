@@ -1,1 +1,1 @@
-adminer-4.7.5.php
+adminer-4.7.6.php
