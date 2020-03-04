@@ -22,10 +22,10 @@ The following databases are supported by this docker image:
 - SimpleDB
 - ElasticSearch
 - MongoDB
+- MS SQL
 
 Unsupported databases (TODO) :
 
-- MS SQL
 - Oracle
 - Firebird
 

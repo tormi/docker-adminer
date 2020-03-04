@@ -6,6 +6,7 @@ apk --update add \
     s6 \
     nginx \
     php7-fpm \
+    php7-pdo_dblib \
     php7-pdo_mysql \
     php7-pdo_pgsql \
     php7-pdo_sqlite \
