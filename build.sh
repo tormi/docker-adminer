@@ -2,8 +2,8 @@
 
 set -eux
 
-VERSION=4.7.9
-MINOR_VERSION=4.7
+VERSION=4.8.0
+MINOR_VERSION=4.8
 MAJOR_VERSION=4
 
 IMAGE_NAME=dehy/adminer:latest hooks/build
