@@ -1,5 +1,5 @@
 FROM alpine:edge
-MAINTAINER Arnaud de Mouhy <arnaud.demouhy@akerbis.com>
+MAINTAINER Arnaud de Mouhy <arnaud@admds.net>
 
 ARG VCS_REF
 ARG BUILD_DATE
