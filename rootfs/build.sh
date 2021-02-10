@@ -10,32 +10,10 @@ apk --update add \
     php7-pdo_mysql \
     php7-pdo_pgsql \
     php7-pdo_sqlite \
+    php7-pecl-mongodb \
     php7-xml \
     php7-json \
-    php7-session \
-    php7-pear \
-    php7-dev \
-    autoconf \
-    make \
-    gcc \
-    g++ \
-    libssl1.1 \
-    openssl-dev
-
-# Patch pecl command
-sed -i -e 's/\(PHP -C\) -n/\1/g' /usr/bin/pecl
-
-pecl install mongodb
-echo "extension=mongodb.so" > /etc/php7/conf.d/00_mondodb.ini
-
-apk del \
-    php7-pear \
-    php7-dev \
-    autoconf \
-    make \
-    gcc \
-    g++ \
-    openssl-dev
+    php7-session
 
 # Fixing file upload rights
 chown -R nginx: /var/lib/nginx
