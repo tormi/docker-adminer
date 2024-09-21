@@ -1,5 +1,5 @@
-FROM alpine:edge
-MAINTAINER Arnaud de Mouhy <arnaud@admds.net>
+FROM alpine:3.16
+LABEL maintainer="Arnaud de Mouhy <arnaud@admds.net>"
 
 ARG VCS_REF
 ARG BUILD_DATE
